@@ -1,6 +1,10 @@
 package day02;
 
+import day02.MovieService;
 import org.junit.jupiter.api.Test;
+
+import java.io.IOException;
+import java.nio.file.Paths;
 
 import static org.junit.jupiter.api.Assertions.*;
 

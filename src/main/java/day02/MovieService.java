@@ -1,11 +1,8 @@
-package day02.day02;
-
-import day02.Movie;
+package day02;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,7 +29,7 @@ public class MovieService {
         try {
             result = Files.readAllLines(path);
         } catch (IOException ioException) {
-            ioException.printStackTrace();
+            throw new IllegalArgumentException("File can not be read.");
         }
         return result;
     }
