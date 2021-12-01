@@ -24,7 +24,7 @@ public class CourierFileManager {
     private List<String> readRides(Path path) {
         List<String> result = new ArrayList<>();
         try {
-            result = Files.readAllLines(Paths.get(""));
+            result = Files.readAllLines(path);
         } catch (IOException ioException) {
             throw new IllegalArgumentException("File can not be read.");
         }

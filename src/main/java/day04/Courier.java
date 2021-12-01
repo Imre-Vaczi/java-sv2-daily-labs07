@@ -12,7 +12,10 @@ public class Courier {
     }
 
     public Courier addRide(Ride ride) {
-        if (!isDayValid(getLastDay(),ride.getDayOfWeek()) || !isDeliveryValid(getLastRide(), ride.getNumOfRide())) {
+        if (!isDayValid(getLastDay(),ride.getDayOfWeek())) {
+            throw new IllegalArgumentException("Chronology compromised, data can not be recorded.");
+        }
+        if (getLastDay() == ride.getDayOfWeek() && !isDeliveryValid(getLastRide(), ride.getNumOfRide())) {
             throw new IllegalArgumentException("Chronology compromised, data can not be recorded.");
         }
         rides.add(ride);
