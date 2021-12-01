@@ -1,11 +1,13 @@
 package day01;
 
+import java.time.LocalDate;
+
 public class Human {
     private String name;
     private int yearOfBirth;
 
     public Human(String name, int yearOfBirth) {
-        if (yearOfBirth > 120) {
+        if (LocalDate.now().getYear() - yearOfBirth > 120) {
             throw new IllegalArgumentException("Provided data is out of bound in terms of age.");
         }
         if (name.split(" ").length < 2) {
